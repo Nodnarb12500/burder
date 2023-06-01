@@ -1,0 +1,24 @@
+
+/* Elements */
+body {
+
+
+}
+
+/* IDs */
+#gameArea {
+    color: black;
+
+}
+
+#gameCanvas {
+    border: solid black 1px;
+}
+
+
+/* Class */
+.center {
+    text-align: center;
+
+}
+
