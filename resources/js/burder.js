@@ -10,12 +10,14 @@ var backgroundMusic;
 
 var scoreBoard = 0;
 
+var gameSpeed = 1;
+
 function startGame() {
     // debug thing for no reason
     console.log("game started!");
 
     // Items
-    thrownLog = new component(500, 80, "brown", 100, 600 - 120);
+    thrownLog = new component(710, 80, "brown", 40, 600 - 120);
     //birds = new component(30, 30, "black", 100, 400);
     backgroundImg = new component(800, 1200, "resources/media/background.jpg", 0, -600, "background");
 
@@ -87,7 +89,7 @@ function component(width, height, color, x, y, type) {
         this.x += this.speedX;
         this.y += this.speedY;
         if (this.type == "background") {
-            if ((this.y) == (gameCanvas.canvas.height)) {
+            if ((this.y) >= (gameCanvas.canvas.height)) {
                 this.y = -this.height / 2;
             }
         }
@@ -143,15 +145,33 @@ function updateGameArea() {
 
     for (i = 0; i < birds.length; i += 1) {
         if (thrownLog.crashWith(birds[i])) {
-            scoreBoard += 1;
-            // dont forget to make the bird explode
+            if (birds[i].died) {
+                // this if statement might be useless at some point. not decided yet
+
+            } else {
+                scoreBoard += 1;
+                birds[i].died = true;
+
+                // dont forget to make the bird explode or
+                // delete bird from array after "birdsplosion"
+
+                // Birds either explode or get vaporized. maybe both if i can do it right.
+
+                // TODO
+                //  - bird hit log - done
+                //  - bird explode
+                //  - bird guts passes log
+                //  - bird despawns off screen - done
+
+            }
+            
         }
     }
 
     gameCanvas.clear();
 
     // background, has to be first so elements get drawns over it
-    backgroundImg.speedY = 1;
+    backgroundImg.speedY = gameSpeed;
     backgroundImg.newPos();
     backgroundImg.update();
 
@@ -159,11 +179,77 @@ function updateGameArea() {
     if (gameCanvas.frameNo == 1 || everyinterval(150)) {
         x = gameCanvas.canvas.width;
         y = gameCanvas.canvas.height;
-        birds.push(new component(40, 80, "black", 100, 200));
+
+        /* TODO
+
+            - Random Placement
+            - Randomish flying direction if spawned on the rightside make it fly left.
+            - all birds "fall"
+            - random bird colors (for testing random gen for random bird images later)
+            - random bird sizes?
+       
+       */
+
+        minHeight = 50;
+        maxHeight = 60;
+        height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
+
+        minWidth = 45;
+        maxWidth = 65;
+        width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
+
+        // maybe gets replaced with 0 so that new birds appear to fly in from the top.
+        minY = 30;
+        maxY = 400;
+        posY = Math.floor(Math.random() * (maxY - minY) + minY);
+
+        minH = 10;
+        maxH = 750;
+        posH = Math.floor(Math.random() * (maxH - minH) + minH);
+
+        colors = ["red", "blue", "black", "brown", "orange", "grey", "white"];
+
+        minColPik = 0;
+        maxColPik = colors.length;
+        colorPicker = colors[(Math.floor(Math.random() * (maxColPik - minColPik) + minColPik))]
+
+
+        birds.push(new component(height, width, colorPicker, posH, (0 - height)));
+        
+
+        // birds always fall (log is "flying up")
+        birds[(birds.length - 1)].speedY = gameSpeed;
+
+        // make birds go in different directions based on where they spawned
+        if (birds[birds.length - 1].x > 400) {
+            birds[(birds.length - 1)].speedX = -1;
+
+        } else {
+            birds[(birds.length - 1)].speedX = 1;
+
+        }
+
     }
+
     for (i = 0; i < birds.length; i += 1) {
-        birds[i].y += 1;
-        birds[i].x += 1;
+        // if statment to make bird turn around near edge of screen?
+
+        if (birds[i].y > 600) {
+            // despawn birds
+            birds.splice(i, 1);
+
+        } else {
+            if (birds[i].x + birds[i].width > 750) {
+                // to far right go left now
+                birds[i].speedX = -1;
+            } else if (birds[i].x < 40) {
+                // to far left go right now
+                birds[i].speedX = 1;
+            }
+        }
+
+
+        birds[i].newPos();
         birds[i].update();
     }
 
