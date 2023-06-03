@@ -34,7 +34,7 @@ var gameCanvas = {
         this.context = this.canvas.getContext("2d");
         document.getElementById("gameArea").appendChild(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 5);
+        this.interval = setInterval(updateGameArea, 20);
 
     },
     clear : function() {
@@ -44,7 +44,6 @@ var gameCanvas = {
         clearInterval(this.interval);
     }
 }
-
 
 function component(width, height, color, x, y, type) {
     this.type = type;
@@ -70,9 +69,12 @@ function component(width, height, color, x, y, type) {
 
         if (type == "image" || type == "background") {
             ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+            
             if (type == "background") {
-                ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+                ctx.drawImage(this.image, this.x, this.y + -this.height, this.width, this.height);
+     
             }
+
         } else {
             ctx.fillStyle = color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -85,9 +87,8 @@ function component(width, height, color, x, y, type) {
         this.x += this.speedX;
         this.y += this.speedY;
         if (this.type == "background") {
-            console.log(backgroundImg.y == backgroundImg.height);
-            if (this.y == (this.height)) {
-                this.y = 0;
+            if ((this.y) == (gameCanvas.canvas.height)) {
+                this.y = -this.height / 2;
             }
         }
     }
