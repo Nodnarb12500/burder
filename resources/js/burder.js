@@ -17,6 +17,7 @@ function startGame() {
     // Items
     thrownLog = new component(500, 80, "brown", 100, 600 - 120);
     //birds = new component(30, 30, "black", 100, 400);
+    backgroundImg = new component(800, 1200, "resources/media/background.jpg", 0, -600, "background");
 
     //start game
     gameCanvas.start();
@@ -33,7 +34,7 @@ var gameCanvas = {
         this.context = this.canvas.getContext("2d");
         document.getElementById("gameArea").appendChild(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
-        this.interval = setInterval(updateGameArea, 20);
+        this.interval = setInterval(updateGameArea, 5);
 
     },
     clear : function() {
@@ -45,7 +46,12 @@ var gameCanvas = {
 }
 
 
-function component(width, height, color, x, y) {
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    if (type == "image" || type == "background") {
+        this.image = new Image();
+        this.image.src = color;
+    }
 
     // Size
     this.width = width;
@@ -61,13 +67,31 @@ function component(width, height, color, x, y) {
 
     this.update = function() {
         ctx = gameCanvas.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+
+        if (type == "image" || type == "background") {
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+            if (type == "background") {
+                ctx.drawImage(this.image, this.x + this.width, this.y, this.width, this.height);
+            }
+        } else {
+            ctx.fillStyle = color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+
+        }
+
     }
+
     this.newPos = function() {
         this.x += this.speedX;
         this.y += this.speedY;
+        if (this.type == "background") {
+            console.log(backgroundImg.y == backgroundImg.height);
+            if (this.y == (this.height)) {
+                this.y = 0;
+            }
+        }
     }
+
     this.crashWith = function(otherobj) {
         // Player object?
         var myLeft = this.x;
@@ -84,23 +108,9 @@ function component(width, height, color, x, y) {
         var crash = true;
 
         if ((myBottom < otherTop) || (myTop > otherBottom) || (myRight < otherLeft) || (myLeft > otherRight)) {
-        //if ((myBottom > otherTop) || (myTop < otherBottom) || (myRight > otherLeft) || (myLeft < otherRight)) {
-            
-            // debug
-            console.log("myBottom < otherTop : " + (myBottom < otherTop));
-            console.log("myTop > otherBottom : " + (myTop > otherBottom));
-            console.log("myRight < otherLeft : " + (myRight < otherLeft));
-            console.log("myLeft > otherRight : " + (myLeft > otherRight));
-
-
             crash = false;
+
         }
-        // debug
-        
-        //console.log("myBottom < otherTop : " + (myBottom < otherTop));
-        //console.log("myTop > otherBottom : " + (myTop > otherBottom));
-        //console.log("myRight < otherLeft : " + (myRight < otherLeft));
-        //console.log("myLeft > otherRight : " + (myLeft > otherRight));
         
         return crash;
 
@@ -138,6 +148,12 @@ function updateGameArea() {
     }
 
     gameCanvas.clear();
+
+    // background, has to be first so elements get drawns over it
+    backgroundImg.speedY = 1;
+    backgroundImg.newPos();
+    backgroundImg.update();
+
     gameCanvas.frameNo += 1;
     if (gameCanvas.frameNo == 1 || everyinterval(150)) {
         x = gameCanvas.canvas.width;
