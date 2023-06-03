@@ -158,11 +158,12 @@ function updateGameArea() {
     gameCanvas.frameNo += 1;
     if (gameCanvas.frameNo == 1 || everyinterval(150)) {
         x = gameCanvas.canvas.width;
-        y = gameCanvas.canvas.height - 200;
-        birds.push(new component(40, 80, "blue", 100, 300));
+        y = gameCanvas.canvas.height;
+        birds.push(new component(40, 80, "black", 100, 200));
     }
     for (i = 0; i < birds.length; i += 1) {
-        //birds[i].y += 1;
+        birds[i].y += 1;
+        birds[i].x += 1;
         birds[i].update();
     }
 
@@ -192,6 +193,11 @@ function sound(src) {
 }
 
 function everyinterval(n) {
-    if ((gameArea.frameNo / n) % 1 == 0) { return true; }
+    if ((gameCanvas.frameNo / n) % 1 == 0) { 
+        return true;
+
+    }
     return false;
+
 }
+
