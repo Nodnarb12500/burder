@@ -18,7 +18,6 @@ function startGame() {
 
     // Items
     thrownLog = new component(710, 80, "brown", 40, 600 - 120);
-    //birds = new component(30, 30, "black", 100, 400);
     backgroundImg = new component(800, 600, "/resources/media/images/backgroundImg.jpg", 0, 0, "background");
 
     //start game
@@ -47,8 +46,9 @@ var gameCanvas = {
     }
 }
 
-function component(width, height, color, x, y, type) {
+function component(width, height, color, x, y, type, flip) {
     this.type = type;
+    this.flip = flip;
     if (type == "image" || type == "background") {
         this.image = new Image();
         this.image.src = color;
@@ -70,8 +70,22 @@ function component(width, height, color, x, y, type) {
         ctx = gameCanvas.context;
 
         if (type == "image" || type == "background") {
-            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-            
+            if (this.flip == true) {
+                ctx.save();
+
+                ctx.translate(this.x + this.width/2, this.y + this.width);
+                ctx.scale(-1, 1);
+                ctx.translate(-(this.x + this.width/2), -(this.y + this.width/2));
+
+                ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+
+                ctx.restore();
+
+            } else {
+                ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+
+            }
+
             if (type == "background") {
                 ctx.drawImage(this.image, this.x, this.y + -this.height, this.width, this.height);
      
@@ -115,11 +129,9 @@ function component(width, height, color, x, y, type) {
             crash = false;
 
         }
-        
         return crash;
 
     }
-    
 }
 
 var playerMovment = {
@@ -177,62 +189,50 @@ function updateGameArea() {
     backgroundImg.update();
 
     gameCanvas.frameNo += 1;
-    if (gameCanvas.frameNo == 1 || everyinterval(150)) {
+    if (gameCanvas.frameNo == 1 || everyinterval(15)) {
         x = gameCanvas.canvas.width;
         y = gameCanvas.canvas.height;
 
-        /* TODO
-
-            - Random Placement
-            - Randomish flying direction if spawned on the rightside make it fly left.
-            - all birds "fall"
-            - random bird colors (for testing random gen for random bird images later)
-            - random bird sizes?
-       
-       */
-
+        // Random height size
         minHeight = 50;
         maxHeight = 60;
         height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
 
+        // Random width size
         minWidth = 45;
         maxWidth = 65;
         width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
 
-        // maybe gets replaced with 0 so that new birds appear to fly in from the top.
-        minY = 30;
-        maxY = 400;
-        posY = Math.floor(Math.random() * (maxY - minY) + minY);
-
+        // random horizontal placement
         minH = 10;
         maxH = 750;
         posH = Math.floor(Math.random() * (maxH - minH) + minH);
 
-        colors = ["red", "blue", "black", "brown", "orange", "grey", "white"];
+        // random bird sprite
         birdImgList = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
-
-        minColPik = 0;
-        maxColPik = colors.length;
-        colorPicker = colors[(Math.floor(Math.random() * (maxColPik - minColPik) + minColPik))]
-
         birdMin = 0;
-        birdMax = birdImgList.length - 1;
+        birdMax = birdImgList.length;
         birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
 
 
         //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
-        birds.push(new component(height, width, birdImg, posH, (0 - height), "image"));
-        
+        birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
+
+        lastBird = birds[(birds.length - 1)];
 
         // birds always fall (log is "flying up")
-        birds[(birds.length - 1)].speedY = gameSpeed;
+        lastBird.speedY = gameSpeed;
+        // since im flipping the birds now i dont need to care about changing the speed
+        lastBird.speedX = -1;
 
         // make birds go in different directions based on where they spawned
-        if (birds[birds.length - 1].x > 400) {
-            birds[(birds.length - 1)].speedX = -1;
+        if (lastBird.x > 400) {
+            lastBird.speedX = -1;
+            lastBird.flip = false;
 
         } else {
-            birds[(birds.length - 1)].speedX = 1;
+            lastBird.speedX = 1;
+            lastBird.flip = true;
 
         }
 
@@ -249,11 +249,16 @@ function updateGameArea() {
             if (birds[i].x + birds[i].width > 750) {
                 // to far right go left now
                 birds[i].speedX = -1;
+                birds[i].flip = false;
+
             } else if (birds[i].x < 40) {
                 // to far left go right now
                 birds[i].speedX = 1;
+                birds[i].flip = true;
+
             }
         }
+        birds[i].speedY = gameSpeed;
 
 
         birds[i].newPos();
@@ -293,4 +298,3 @@ function everyinterval(n) {
     return false;
 
 }
-
