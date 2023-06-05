@@ -209,14 +209,19 @@ function updateGameArea() {
         posH = Math.floor(Math.random() * (maxH - minH) + minH);
 
         colors = ["red", "blue", "black", "brown", "orange", "grey", "white"];
-        birdImgs = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
+        birdImgList = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
 
         minColPik = 0;
         maxColPik = colors.length;
         colorPicker = colors[(Math.floor(Math.random() * (maxColPik - minColPik) + minColPik))]
 
+        birdMin = 0;
+        birdMax = birdImgList.length - 1;
+        birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
 
-        birds.push(new component(height, width, colorPicker, posH, (0 - height)));
+
+        //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
+        birds.push(new component(height, width, birdImg, posH, (0 - height), "image"));
         
 
         // birds always fall (log is "flying up")
