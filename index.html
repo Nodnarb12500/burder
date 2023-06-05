@@ -25,11 +25,26 @@
         <section id="gameArea"></section>
 
         <section>
-            <h3>Debug/stats</h3>
-            <hr>
-            <p id="currentScore"></p>
-            <p id="birdsCount"></p>
-            <p id="frameNum"></p>
+            <div id="left">
+                <h3>Debug/stats</h3>
+                <hr>
+
+                <p id="currentScore"></p>
+                <p id="birdsCount"></p>
+                <p id="frameNum"></p>
+            </div>
+
+            <div id="right">
+                <label id="speedDispaly">gameSpeed</label>
+                <button onclick='(gameSpeed += 1); document.getElementById("speedDispaly").innerText = "gameSpeed: " + gameSpeed;'>+</button>
+                <button onclick='(gameSpeed += -1); document.getElementById("speedDispaly").innerText = "gameSpeed: " + gameSpeed;'>-</button>
+                <br>
+                <label id="spawnDisplay">spawnRate</label>
+                <button onclick='(spawnRate += -5); document.getElementById("spawnDisplay").innerText = "spawnRate: " + spawnRate;'>+</button>
+                <button onclick='(spawnRate += 5); document.getElementById("spawnDisplay").innerText = "spawnRate: " + spawnRate;'>-</button>
+
+            </div>
+            
         </section>
 
         <section id="how-To?">
