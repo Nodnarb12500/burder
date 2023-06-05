@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="600"
+   viewBox="0 0 211.66666 158.75"
+   version="1.1"
+   id="svg35"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="backgroundImg.svg"
+   inkscape:export-filename="backgroundImg.jpg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview37"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="false"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:lockguides="false"
+     inkscape:zoom="1.0175725"
+     inkscape:cx="284.50061"
+     inkscape:cy="280.56969"
+     inkscape:window-width="1918"
+     inkscape:window-height="1036"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs32">
+    <filter
+       x="-0.034689615"
+       width="1.0693792"
+       y="-0.08304589"
+       height="1.1660918"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Felt Feather"
+       id="filter2538">
+      <feGaussianBlur
+         stdDeviation="1.3 1.3"
+         result="blur"
+         id="feGaussianBlur2522" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite2524" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite2526" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite2528" />
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="5"
+         seed="1"
+         baseFrequency="0.05 0.05"
+         result="turbulence"
+         id="feTurbulence2530" />
+      <feDisplacementMap
+         in="composite3"
+         in2="turbulence"
+         xChannelSelector="R"
+         scale="20"
+         yChannelSelector="G"
+         result="map"
+         id="feDisplacementMap2532" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 -2.77556e-17 "
+         result="colormatrix"
+         id="feColorMatrix2534" />
+      <feComposite
+         in="composite3"
+         in2="colormatrix"
+         operator="atop"
+         result="composite4"
+         id="feComposite2536" />
+    </filter>
+    <filter
+       x="-0.034689615"
+       width="1.0693792"
+       y="-0.08304589"
+       height="1.1660918"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Felt Feather"
+       id="filter2574">
+      <feGaussianBlur
+         stdDeviation="1.3 1.3"
+         result="blur"
+         id="feGaussianBlur2558" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite2560" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite2562" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite2564" />
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="5"
+         seed="3"
+         baseFrequency="0.05 0.05"
+         result="turbulence"
+         id="feTurbulence2566" />
+      <feDisplacementMap
+         in="composite3"
+         in2="turbulence"
+         xChannelSelector="R"
+         scale="20"
+         yChannelSelector="G"
+         result="map"
+         id="feDisplacementMap2568" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 -2.77556e-17 "
+         result="colormatrix"
+         id="feColorMatrix2570" />
+      <feComposite
+         in="composite3"
+         in2="colormatrix"
+         operator="atop"
+         result="composite4"
+         id="feComposite2572" />
+    </filter>
+    <filter
+       x="-0.034689615"
+       width="1.0693792"
+       y="-0.08304589"
+       height="1.1660918"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Felt Feather"
+       id="filter2718">
+      <feGaussianBlur
+         stdDeviation="1.3 1.3"
+         result="blur"
+         id="feGaussianBlur2702" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite2704" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite2706" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite2708" />
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="5"
+         seed="12"
+         baseFrequency="0.05 0.05"
+         result="turbulence"
+         id="feTurbulence2710" />
+      <feDisplacementMap
+         in="composite3"
+         in2="turbulence"
+         xChannelSelector="R"
+         scale="20"
+         yChannelSelector="G"
+         result="map"
+         id="feDisplacementMap2712" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 -2.77556e-17 "
+         result="colormatrix"
+         id="feColorMatrix2714" />
+      <feComposite
+         in="composite3"
+         in2="colormatrix"
+         operator="atop"
+         result="composite4"
+         id="feComposite2716" />
+    </filter>
+    <filter
+       x="-0.034689615"
+       width="1.0693792"
+       y="-0.08304589"
+       height="1.1660918"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Felt Feather"
+       id="filter3114">
+      <feGaussianBlur
+         stdDeviation="1.3 1.3"
+         result="blur"
+         id="feGaussianBlur3098" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite3100" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite3102" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite3104" />
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="5"
+         seed="34"
+         baseFrequency="0.05 0.05"
+         result="turbulence"
+         id="feTurbulence3106" />
+      <feDisplacementMap
+         in="composite3"
+         in2="turbulence"
+         xChannelSelector="R"
+         scale="20"
+         yChannelSelector="G"
+         result="map"
+         id="feDisplacementMap3108" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 -2.77556e-17 "
+         result="colormatrix"
+         id="feColorMatrix3110" />
+      <feComposite
+         in="composite3"
+         in2="colormatrix"
+         operator="atop"
+         result="composite4"
+         id="feComposite3112" />
+    </filter>
+    <filter
+       x="-0.034689615"
+       width="1.0693792"
+       y="-0.08304589"
+       height="1.1660918"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Felt Feather"
+       id="filter3348">
+      <feGaussianBlur
+         stdDeviation="1.3 1.3"
+         result="blur"
+         id="feGaussianBlur3332" />
+      <feComposite
+         in="SourceGraphic"
+         in2="blur"
+         operator="atop"
+         result="composite1"
+         id="feComposite3334" />
+      <feComposite
+         in2="composite1"
+         operator="in"
+         result="composite2"
+         id="feComposite3336" />
+      <feComposite
+         in2="composite2"
+         operator="in"
+         result="composite3"
+         id="feComposite3338" />
+      <feTurbulence
+         type="fractalNoise"
+         numOctaves="5"
+         seed="49"
+         baseFrequency="0.05 0.05"
+         result="turbulence"
+         id="feTurbulence3340" />
+      <feDisplacementMap
+         in="composite3"
+         in2="turbulence"
+         xChannelSelector="R"
+         scale="20"
+         yChannelSelector="G"
+         result="map"
+         id="feDisplacementMap3342" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 -2.77556e-17 "
+         result="colormatrix"
+         id="feColorMatrix3344" />
+      <feComposite
+         in="composite3"
+         in2="colormatrix"
+         operator="atop"
+         result="composite4"
+         id="feComposite3346" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#00ffff;stroke-width:0.264583"
+       id="rect279"
+       width="211.66666"
+       height="158.75"
+       x="-0.018686255"
+       y="0.043731716"
+       inkscape:label="Sky" />
+    <g
+       id="g693"
+       inkscape:label="Cloud"
+       transform="translate(-6.3721736,-13.401604)"
+       style="filter:url(#filter2574)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.284145"
+         id="path664"
+         cx="54.88311"
+         cy="37.674252"
+         rx="41.099472"
+         ry="11.153029" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="path666"
+         cx="27.246117"
+         cy="43.685066"
+         rx="15.564519"
+         ry="11.174633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.287274"
+         id="path668"
+         cx="27.340477"
+         cy="33.551464"
+         rx="9.193821"
+         ry="7.7090039" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.275574"
+         id="path670"
+         cx="52.108978"
+         cy="27.341805"
+         rx="22.849918"
+         ry="7.7365742" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.294775"
+         id="path672"
+         cx="78.185585"
+         cy="30.907984"
+         rx="6.5834827"
+         ry="4.9984574" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.365202"
+         id="path674"
+         cx="89.335312"
+         cy="41.149353"
+         rx="12.286745"
+         ry="8.0180893" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.303138"
+         id="path676"
+         cx="46.690117"
+         cy="49.851212"
+         rx="14.332134"
+         ry="6.3583355" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.31092"
+         id="path680"
+         cx="81.494331"
+         cy="45.787182"
+         rx="16.45639"
+         ry="6.906846" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.373604"
+         id="path682"
+         ry="6.1836381"
+         rx="14.943209"
+         cy="50.99118"
+         cx="66.210419" />
+    </g>
+    <g
+       id="g693-3"
+       inkscape:label="Cloud"
+       transform="translate(99.518904,12.232757)"
+       style="filter:url(#filter2718)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.284145"
+         id="path664-6"
+         cx="54.88311"
+         cy="37.674252"
+         rx="41.099472"
+         ry="11.153029" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="path666-7"
+         cx="27.246117"
+         cy="43.685066"
+         rx="15.564519"
+         ry="11.174633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.287274"
+         id="path668-5"
+         cx="27.340477"
+         cy="33.551464"
+         rx="9.193821"
+         ry="7.7090039" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.275574"
+         id="path670-3"
+         cx="52.108978"
+         cy="27.341805"
+         rx="22.849918"
+         ry="7.7365742" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.294775"
+         id="path672-5"
+         cx="78.185585"
+         cy="30.907984"
+         rx="6.5834827"
+         ry="4.9984574" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.365202"
+         id="path674-6"
+         cx="89.335312"
+         cy="41.149353"
+         rx="12.286745"
+         ry="8.0180893" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.303138"
+         id="path676-2"
+         cx="46.690117"
+         cy="49.851212"
+         rx="14.332134"
+         ry="6.3583355" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.31092"
+         id="path680-9"
+         cx="81.494331"
+         cy="45.787182"
+         rx="16.45639"
+         ry="6.906846" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.373604"
+         id="path682-1"
+         ry="6.1836381"
+         rx="14.943209"
+         cy="50.99118"
+         cx="66.210419" />
+    </g>
+    <g
+       id="g693-2"
+       inkscape:label="Cloud"
+       transform="translate(-4.7801786,41.42487)"
+       style="filter:url(#filter3114)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.284145"
+         id="path664-7"
+         cx="54.88311"
+         cy="37.674252"
+         rx="41.099472"
+         ry="11.153029" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="path666-0"
+         cx="27.246117"
+         cy="43.685066"
+         rx="15.564519"
+         ry="11.174633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.287274"
+         id="path668-9"
+         cx="27.340477"
+         cy="33.551464"
+         rx="9.193821"
+         ry="7.7090039" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.275574"
+         id="path670-36"
+         cx="52.108978"
+         cy="27.341805"
+         rx="22.849918"
+         ry="7.7365742" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.294775"
+         id="path672-0"
+         cx="78.185585"
+         cy="30.907984"
+         rx="6.5834827"
+         ry="4.9984574" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.365202"
+         id="path674-62"
+         cx="89.335312"
+         cy="41.149353"
+         rx="12.286745"
+         ry="8.0180893" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.303138"
+         id="path676-6"
+         cx="46.690117"
+         cy="49.851212"
+         rx="14.332134"
+         ry="6.3583355" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.31092"
+         id="path680-1"
+         cx="81.494331"
+         cy="45.787182"
+         rx="16.45639"
+         ry="6.906846" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.373604"
+         id="path682-8"
+         ry="6.1836381"
+         rx="14.943209"
+         cy="50.99118"
+         cx="66.210419" />
+    </g>
+    <g
+       id="g693-7"
+       inkscape:label="Cloud"
+       transform="translate(98.3177,70.408267)"
+       style="filter:url(#filter2538)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.284145"
+         id="path664-9"
+         cx="54.88311"
+         cy="37.674252"
+         rx="41.099472"
+         ry="11.153029" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="path666-2"
+         cx="27.246117"
+         cy="43.685066"
+         rx="15.564519"
+         ry="11.174633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.287274"
+         id="path668-0"
+         cx="27.340477"
+         cy="33.551464"
+         rx="9.193821"
+         ry="7.7090039" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.275574"
+         id="path670-2"
+         cx="52.108978"
+         cy="27.341805"
+         rx="22.849918"
+         ry="7.7365742" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.294775"
+         id="path672-3"
+         cx="78.185585"
+         cy="30.907984"
+         rx="6.5834827"
+         ry="4.9984574" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.365202"
+         id="path674-7"
+         cx="89.335312"
+         cy="41.149353"
+         rx="12.286745"
+         ry="8.0180893" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.303138"
+         id="path676-5"
+         cx="46.690117"
+         cy="49.851212"
+         rx="14.332134"
+         ry="6.3583355" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.31092"
+         id="path680-92"
+         cx="81.494331"
+         cy="45.787182"
+         rx="16.45639"
+         ry="6.906846" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.373604"
+         id="path682-2"
+         ry="6.1836381"
+         rx="14.943209"
+         cy="50.99118"
+         cx="66.210419" />
+    </g>
+    <g
+       id="g693-8"
+       inkscape:label="Cloud"
+       transform="translate(-3.3745411,95.318674)"
+       style="filter:url(#filter3348)">
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.284145"
+         id="path664-97"
+         cx="54.88311"
+         cy="37.674252"
+         rx="41.099472"
+         ry="11.153029" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="path666-3"
+         cx="27.246117"
+         cy="43.685066"
+         rx="15.564519"
+         ry="11.174633" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.287274"
+         id="path668-6"
+         cx="27.340477"
+         cy="33.551464"
+         rx="9.193821"
+         ry="7.7090039" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.275574"
+         id="path670-1"
+         cx="52.108978"
+         cy="27.341805"
+         rx="22.849918"
+         ry="7.7365742" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.294775"
+         id="path672-2"
+         cx="78.185585"
+         cy="30.907984"
+         rx="6.5834827"
+         ry="4.9984574" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.365202"
+         id="path674-9"
+         cx="89.335312"
+         cy="41.149353"
+         rx="12.286745"
+         ry="8.0180893" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.303138"
+         id="path676-3"
+         cx="46.690117"
+         cy="49.851212"
+         rx="14.332134"
+         ry="6.3583355" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.31092"
+         id="path680-19"
+         cx="81.494331"
+         cy="45.787182"
+         rx="16.45639"
+         ry="6.906846" />
+      <ellipse
+         style="fill:#ffffff;stroke-width:0.373604"
+         id="path682-4"
+         ry="6.1836381"
+         rx="14.943209"
+         cy="50.99118"
+         cx="66.210419" />
+    </g>
+  </g>
+</svg>
