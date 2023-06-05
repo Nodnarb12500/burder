@@ -19,7 +19,7 @@ function startGame() {
     // Items
     thrownLog = new component(710, 80, "brown", 40, 600 - 120);
     //birds = new component(30, 30, "black", 100, 400);
-    backgroundImg = new component(800, 1200, "resources/media/background.jpg", 0, -600, "background");
+    backgroundImg = new component(800, 600, "/resources/media/images/backgroundImg.jpg", 0, 0, "background");
 
     //start game
     gameCanvas.start();
@@ -90,7 +90,8 @@ function component(width, height, color, x, y, type) {
         this.y += this.speedY;
         if (this.type == "background") {
             if ((this.y) >= (gameCanvas.canvas.height)) {
-                this.y = -this.height / 2;
+                //this.y = -this.height / 2;
+                this.y = 0;
             }
         }
     }
@@ -208,6 +209,7 @@ function updateGameArea() {
         posH = Math.floor(Math.random() * (maxH - minH) + minH);
 
         colors = ["red", "blue", "black", "brown", "orange", "grey", "white"];
+        birdImgs = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
 
         minColPik = 0;
         maxColPik = colors.length;
