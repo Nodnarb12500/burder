@@ -16,6 +16,6 @@ the images used in the game are just placed in:
 /resources/media/images/
 
 
-TODO:
+# TODO:
 
 Learn Markdown lmao
