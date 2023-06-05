@@ -10,7 +10,10 @@ var backgroundMusic;
 
 var scoreBoard = 0;
 
+// gameplay variables
 var gameSpeed = 1;
+var spawnRate = 150; // lower is faster
+
 
 function startGame() {
     // debug thing for no reason
@@ -153,6 +156,70 @@ var playerMovment = {
     }
 }
 
+
+function birdSpawner() {
+    /*
+    dont forget to make the bird explode or
+    delete bird from array after "birdsplosion"
+
+    Birds either explode or get vaporized. maybe both if i can do it right.
+
+    TODO:
+        - bird hit log - done
+        - bird explode
+        - bird guts passes log
+        - bird despawns off screen - done
+
+    */
+
+    // Random height size
+    minHeight = 50;
+    maxHeight = 60;
+    height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
+
+    // Random width size
+    minWidth = 45;
+    maxWidth = 65;
+    width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
+
+    // random horizontal placement
+    minH = 10;
+    maxH = 750;
+    posH = Math.floor(Math.random() * (maxH - minH) + minH);
+
+    // random bird sprite
+    birdImgList = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
+    birdMin = 0;
+    birdMax = birdImgList.length;
+    birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
+
+
+    //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
+    birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
+    //birds.push(new component(48, 48, birdImg, posH, (0 - height), "image", false));
+
+    lastBird = birds[(birds.length - 1)];
+
+    // birds always fall (log is "flying up")
+    lastBird.speedY = gameSpeed;
+    // since im flipping the birds now i dont need to care about changing the speed
+    lastBird.speedX = -1;
+
+    // make birds go in different directions based on where they spawned
+    if (lastBird.x > 400) {
+        lastBird.speedX = -1;
+        lastBird.flip = false;
+
+    } else {
+        lastBird.speedX = 1;
+        lastBird.flip = true;
+
+    }
+
+
+}
+
+
 function updateGameArea() {
     var x, y;
 
@@ -160,21 +227,10 @@ function updateGameArea() {
         if (thrownLog.crashWith(birds[i])) {
             if (birds[i].died) {
                 // this if statement might be useless at some point. not decided yet
-
+                // replace bird with bird guts? - make i mspaint?
             } else {
                 scoreBoard += 1;
                 birds[i].died = true;
-
-                // dont forget to make the bird explode or
-                // delete bird from array after "birdsplosion"
-
-                // Birds either explode or get vaporized. maybe both if i can do it right.
-
-                // TODO
-                //  - bird hit log - done
-                //  - bird explode
-                //  - bird guts passes log
-                //  - bird despawns off screen - done
 
             }
             
@@ -189,78 +245,37 @@ function updateGameArea() {
     backgroundImg.update();
 
     gameCanvas.frameNo += 1;
-    if (gameCanvas.frameNo == 1 || everyinterval(15)) {
+    if (gameCanvas.frameNo == 1 || everyinterval(spawnRate)) {
         x = gameCanvas.canvas.width;
         y = gameCanvas.canvas.height;
 
-        // Random height size
-        minHeight = 50;
-        maxHeight = 60;
-        height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
-
-        // Random width size
-        minWidth = 45;
-        maxWidth = 65;
-        width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
-
-        // random horizontal placement
-        minH = 10;
-        maxH = 750;
-        posH = Math.floor(Math.random() * (maxH - minH) + minH);
-
-        // random bird sprite
-        birdImgList = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
-        birdMin = 0;
-        birdMax = birdImgList.length;
-        birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
-
-
-        //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
-        birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
-
-        lastBird = birds[(birds.length - 1)];
-
-        // birds always fall (log is "flying up")
-        lastBird.speedY = gameSpeed;
-        // since im flipping the birds now i dont need to care about changing the speed
-        lastBird.speedX = -1;
-
-        // make birds go in different directions based on where they spawned
-        if (lastBird.x > 400) {
-            lastBird.speedX = -1;
-            lastBird.flip = false;
-
-        } else {
-            lastBird.speedX = 1;
-            lastBird.flip = true;
-
-        }
+        birdSpawner();
 
     }
 
     for (i = 0; i < birds.length; i += 1) {
         // if statment to make bird turn around near edge of screen?
-
+    
         if (birds[i].y > 600) {
             // despawn birds
             birds.splice(i, 1);
-
+    
         } else {
             if (birds[i].x + birds[i].width > 750) {
                 // to far right go left now
                 birds[i].speedX = -1;
                 birds[i].flip = false;
-
+    
             } else if (birds[i].x < 40) {
                 // to far left go right now
                 birds[i].speedX = 1;
                 birds[i].flip = true;
-
+    
             }
         }
+
         birds[i].speedY = gameSpeed;
-
-
+    
         birds[i].newPos();
         birds[i].update();
     }
