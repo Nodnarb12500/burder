@@ -21,7 +21,7 @@ function startGame() {
 
     // Items
     thrownLog = new component(710, 80, "brown", 40, 600 - 120);
-    backgroundImg = new component(800, 600, "/resources/media/images/backgroundImg.jpg", 0, 0, "background");
+    backgroundImg = new component(800, 600, "resources/media/images/backgroundImg.jpg", 0, 0, "background");
 
     //start game
     gameCanvas.start();
@@ -157,7 +157,7 @@ var playerMovment = {
 }
 
 
-function birdSpawner() {
+function birdSpawner(n) {
     /*
     dont forget to make the bird explode or
     delete bird from array after "birdsplosion"
@@ -172,50 +172,55 @@ function birdSpawner() {
 
     */
 
-    // Random height size
-    minHeight = 50;
-    maxHeight = 60;
-    height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
+    // n is the number of birds to spawn
 
-    // Random width size
-    minWidth = 45;
-    maxWidth = 65;
-    width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
+    for (i = 0; i <= n; i++) {
 
-    // random horizontal placement
-    minH = 10;
-    maxH = 750;
-    posH = Math.floor(Math.random() * (maxH - minH) + minH);
+        // Random height size
+        minHeight = 50;
+        maxHeight = 60;
+        height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
 
-    // random bird sprite
-    birdImgList = ["/resources/media/images/bird1.png", "/resources/media/images/bird2.png", "/resources/media/images/bird3.png", "/resources/media/images/bird4.png", "/resources/media/images/bird5.png"];
-    birdMin = 0;
-    birdMax = birdImgList.length;
-    birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
+        // Random width size
+        minWidth = 45;
+        maxWidth = 65;
+        width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
+
+        // random horizontal placement
+        minH = 10;
+        maxH = 750;
+        posH = Math.floor(Math.random() * (maxH - minH) + minH);
+
+        // random bird sprite
+        birdImgList = ["resources/media/images/bird1.png", "resources/media/images/bird2.png", "resources/media/images/bird3.png", "resources/media/images/bird4.png", "resources/media/images/bird5.png"];
+        birdMin = 0;
+        birdMax = birdImgList.length;
+        birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
 
 
-    //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
-    birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
-    //birds.push(new component(48, 48, birdImg, posH, (0 - height), "image", false));
+        //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
+        birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
+        //birds.push(new component(48, 48, birdImg, posH, (0 - height), "image", false));
 
-    lastBird = birds[(birds.length - 1)];
+        lastBird = birds[(birds.length - 1)];
 
-    // birds always fall (log is "flying up")
-    lastBird.speedY = gameSpeed;
-    // since im flipping the birds now i dont need to care about changing the speed
-    lastBird.speedX = -1;
-
-    // make birds go in different directions based on where they spawned
-    if (lastBird.x > 400) {
+        // birds always fall (log is "flying up")
+        lastBird.speedY = gameSpeed;
+        // since im flipping the birds now i dont need to care about changing the speed
         lastBird.speedX = -1;
-        lastBird.flip = false;
 
-    } else {
-        lastBird.speedX = 1;
-        lastBird.flip = true;
+        // make birds go in different directions based on where they spawned
+        if (lastBird.x > 400) {
+            lastBird.speedX = -1;
+            lastBird.flip = false;
+
+        } else {
+            lastBird.speedX = 1;
+            lastBird.flip = true;
+
+        }
 
     }
-
 
 }
 
@@ -249,7 +254,7 @@ function updateGameArea() {
         x = gameCanvas.canvas.width;
         y = gameCanvas.canvas.height;
 
-        birdSpawner();
+        birdSpawner(3);
 
     }
 
