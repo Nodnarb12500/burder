@@ -230,7 +230,7 @@ function birdSplosion(i) {
     // set image to something else
 
     console.log(birds[i] + " exploded");
-    birds[i].image.src = "resources/media/images/bloodSpatter.png";
+    birds[i].image.src = "resources/media/images/bloodSplatter.png";
     birds[i].sploded = true;
 
 }
