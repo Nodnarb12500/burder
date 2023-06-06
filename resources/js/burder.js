@@ -157,38 +157,18 @@ var playerMovment = {
 }
 
 
-function birdSpawner(n) {
-    /*
-    dont forget to make the bird explode or
-    delete bird from array after "birdsplosion"
-
-    Birds either explode or get vaporized. maybe both if i can do it right.
-
-    TODO:
-        - bird hit log - done
-        - bird explode
-        - bird guts passes log
-        - bird despawns off screen - done
-
-    */
-
-    // n is the number of birds to spawn
-
-    for (i = 0; i <= n; i++) {
-
+function birdSpawner(n) { // n is the number of birds to spawn
+    for (i = 0; i < n; i++) {
         // Random height size
-        minHeight = 50;
-        maxHeight = 60;
+        minHeight = 50; maxHeight = 60; 
         height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight);
 
         // Random width size
-        minWidth = 45;
-        maxWidth = 65;
+        minWidth = 45; maxWidth = 65;
         width = Math.floor(Math.random() * (maxWidth - minWidth) + minWidth);
 
         // random horizontal placement
-        minH = 10;
-        maxH = 750;
+        minH = 10; maxH = 750;
         posH = Math.floor(Math.random() * (maxH - minH) + minH);
 
         // random bird sprite
@@ -196,7 +176,6 @@ function birdSpawner(n) {
         birdMin = 0;
         birdMax = birdImgList.length;
         birdImg = birdImgList[(Math.floor(Math.random() * (birdMax - birdMin) + birdMin))];
-
 
         //birds.push(new component(height, width, colorPicker, posH, (0 - height)));
         birds.push(new component(height, width, birdImg, posH, (0 - height), "image", false));
@@ -206,15 +185,15 @@ function birdSpawner(n) {
 
         // birds always fall (log is "flying up")
         lastBird.speedY = gameSpeed;
-        // since im flipping the birds now i dont need to care about changing the speed
-        lastBird.speedX = -1;
 
         // make birds go in different directions based on where they spawned
         if (lastBird.x > 400) {
+            // Left
             lastBird.speedX = -1;
             lastBird.flip = false;
 
         } else {
+            // Right
             lastBird.speedX = 1;
             lastBird.flip = true;
 
@@ -230,6 +209,7 @@ function birdSplosion(i) {
     // set image to something else
 
     console.log(birds[i] + " exploded");
+    birds[i].speedX = 0; birds[i].speedY = gameSpeed + 3;
     birds[i].image.src = "resources/media/images/bloodSplatter.png";
     birds[i].sploded = true;
 
@@ -254,6 +234,8 @@ function updateGameArea() {
 
             }
             
+        } else {
+            birds[i].speedY = gameSpeed;
         }
     }
 
@@ -294,7 +276,7 @@ function updateGameArea() {
             }
         }
 
-        birds[i].speedY = gameSpeed;
+        
     
         birds[i].newPos();
         birds[i].update();
