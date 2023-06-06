@@ -34,6 +34,10 @@
                 <p id="frameNum"></p>
             </div>
 
+            <div>
+                
+            </div>
+
             <div id="right">
                 <label id="speedDispaly">gameSpeed</label>
                 <button onclick='(gameSpeed += 1); document.getElementById("speedDispaly").innerText = "gameSpeed: " + gameSpeed;'>+</button>
@@ -42,6 +46,9 @@
                 <label id="spawnDisplay">spawnRate</label>
                 <button onclick='(spawnRate += -5); document.getElementById("spawnDisplay").innerText = "spawnRate: " + spawnRate;'>+</button>
                 <button onclick='(spawnRate += 5); document.getElementById("spawnDisplay").innerText = "spawnRate: " + spawnRate;'>-</button>
+                <br>
+                <label id="stopLbl">Stop Game</label>
+                <button id="stopBtn" onclick="gameCanvas.stop();">Stop</button>
 
             </div>
             
@@ -49,6 +56,7 @@
 
         <section id="how-To?">
             <!-- btw theres hardly any game here lmao -->
+            <p>you just mess with the testing tools for now lmao</p>
 
         </section>
 
