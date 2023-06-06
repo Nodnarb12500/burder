@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg7452"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="bloodSplatter.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7454"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:lockguides="false"
+     inkscape:zoom="10.636487"
+     inkscape:cx="29.756064"
+     inkscape:cy="28.90992"
+     inkscape:window-width="1918"
+     inkscape:window-height="1036"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="0,12.7"
+       orientation="0,48"
+       id="guide7456"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="12.7,12.7"
+       orientation="48,0"
+       id="guide7458"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="12.7,0"
+       orientation="0,-48"
+       id="guide7460"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,0"
+       orientation="-48,0"
+       id="guide7462"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs7449">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter8201"
+       x="-0.11335439"
+       y="-0.077203792"
+       width="1.2267088"
+       height="1.1544076">
+      <feGaussianBlur
+         stdDeviation="0.51 0.31"
+         result="blur"
+         id="feGaussianBlur8199" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Blur"
+       id="filter8253"
+       x="-0.046847563"
+       y="-0.023951466"
+       width="1.0936951"
+       height="1.0479029">
+      <feGaussianBlur
+         stdDeviation="0.16 0.11"
+         result="blur"
+         id="feGaussianBlur8251" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g8171"
+       style="filter:url(#filter8253)">
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7574"
+         cx="9.0474577"
+         cy="2.5149755"
+         rx="0.17501137"
+         ry="1.9901705" />
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7576"
+         cx="5.8886676"
+         cy="3.2877054"
+         rx="0.17546837"
+         ry="2.1208515" />
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7578"
+         cx="3.5801332"
+         cy="11.37235"
+         rx="2.5544617"
+         ry="0.17474492" />
+    </g>
+    <g
+       id="g8177"
+       style="filter:url(#filter8201)">
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7568"
+         cx="2.0583093"
+         cy="3.2103457"
+         rx="1.0225401"
+         ry="1.0205427" />
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7570"
+         cx="4.0750871"
+         cy="8.0134106"
+         rx="0.69125932"
+         ry="1.7278944" />
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7572"
+         cx="7.8152461"
+         cy="8.1728458"
+         rx="1.1577283"
+         ry="0.86983484" />
+      <ellipse
+         style="fill:#ff0000;stroke:none;stroke-width:0.264583"
+         id="path7580"
+         cx="10.354157"
+         cy="10.722311"
+         rx="1.479605"
+         ry="1.1043245" />
+    </g>
+  </g>
+</svg>

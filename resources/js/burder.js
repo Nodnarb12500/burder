@@ -225,6 +225,16 @@ function birdSpawner(n) {
 }
 
 
+function birdSplosion(i) {
+    // get an array of source images of bird guts - probly just paint spray from MSpaint
+    // set image to something else
+
+    console.log(birds[i] + " exploded");
+    birds[i].image.src = "resources/media/images/bloodSpatter.png";
+    birds[i].sploded = true;
+
+}
+
 function updateGameArea() {
     var x, y;
 
@@ -233,6 +243,11 @@ function updateGameArea() {
             if (birds[i].died) {
                 // this if statement might be useless at some point. not decided yet
                 // replace bird with bird guts? - make i mspaint?
+                if (birds[i].sploded != true) {
+                    birdSplosion(i);
+
+                }
+
             } else {
                 scoreBoard += 1;
                 birds[i].died = true;
