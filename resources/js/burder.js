@@ -311,7 +311,11 @@ var cssMods = {
     fullscreen : function() {
         var canvas = document.getElementById("gameCanvas");
 
-        canvas.requestFullscreen();
+        if (canvas.RequestFullScreen) { canvas.RequestFullScreen(); }
+        else if (canvas.webkitRequestFullScreen) { canvas.webkitRequestFullScreen(); }
+        else if (canvas.mozRequestFullScreen) { canvas.mozRequestFullScreen(); }
+        else if (canvas.msRequestFullscreen) { canvas.msRequestFullscreen(); }
+        else { alert("This browser doesn't supporter fullscreen"); }
 
         /*
         canvas.style.position = "fixed";
