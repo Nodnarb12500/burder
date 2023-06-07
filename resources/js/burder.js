@@ -307,6 +307,24 @@ function sound(src) {
     }
 }
 
+var cssMods = {
+    fullscreen : function() {
+        var canvas = document.getElementById("gameCanvas");
+
+        canvas.requestFullscreen();
+
+        /*
+        canvas.style.position = "fixed";
+        canvas.style.left = 0;
+        canvas.style.right = 0;
+        canvas.style.width = document.body.clientWidth; // these 2 items can be used to make the canvas scale to the screen if i decide to do that
+        canvas.style.height = document.body.clientHeight;
+
+        /* create a listener and check if it already exists so that esc can unset the fullscreen */
+
+    }
+}
+
 function everyinterval(n) {
     if ((gameCanvas.frameNo / n) % 1 == 0) { 
         return true;
